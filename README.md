@@ -20,6 +20,8 @@ Exercism is a cool website where you can work through completing exercises that 
     - [Hamming](#hamming)
     - [Hello World](#hello-world)
     - [Leap](#leap)
+    - [Nucleotide Count](#nucleotide-count)
+    - [Pangram](#pangram)
     - [Reverse String](#reverse-string)
     - [RNA Transcription](#rna-transcription)
     - [Robot Name](#robot-name)
@@ -92,6 +94,47 @@ function is_leap_year(year)
     year % 100 == 0 || return true
     return year % 400 == 0
 end
+```
+
+### Nucleotide Count
+
+```julia
+"""
+    count_nucleotides(strand)
+ 
+The count of each nucleotide within `strand` as a dictionary.
+ 
+Invalid strands raise a `DomainError`.
+ 
+"""
+function count_nucleotides(strand)
+    utf8 = transcode(UInt8, strand)
+    counts = zeros(Int, 256)
+    @inbounds for byte in utf8
+        counts[byte+1] += 1
+    end
+    result = Dict(base => counts[Int(base)+1] for base in "ACGT")
+    if sum(values(result)) != length(utf8)
+        throw(DomainError(strand, "only A, C, G and T are valid nucleotides"))
+    end
+    return result
+end
+
+```
+
+### Pangram
+
+```julia
+"""
+    ispangram(input)
+ 
+Return `true` if `input` contains every alphabetic character (case insensitive).
+ 
+"""
+function ispangram(input)
+    return 'a':'z' ⊆ lowercase(input)
+end
+
 ```
 
 ### Reverse String

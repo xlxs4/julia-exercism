@@ -17,6 +17,7 @@ Exercism is a cool website where you can work through completing exercises that 
   - [Exercises](#exercises)
     - [Collatz Conjecture](#collatz-conjecture)
     - [Difference of Squares](#difference-of-squares)
+    - [Grains](#grains)
     - [Hamming](#hamming)
     - [Hello World](#hello-world)
     - [Leap](#leap)
@@ -60,6 +61,26 @@ end
 "Subtract the sum of squares from square of the sum of the first `n` positive ints"
 function difference(n)
     return square_of_sum(n) - sum_of_squares(n)
+end
+```
+
+### Grains
+
+```julia
+function validate(square)
+    (1 <= square < 65) || throw(DomainError("The square must be between 1 and 64"))
+end
+
+"""Calculate the number of grains on square `square`."""
+function on_square(square)
+    validate(square)
+    return UInt64(1) << (square - 1)
+end
+
+"""Calculate the total number of grains after square `square`."""
+function total_after(square)
+    validate(square)
+    return (UInt64(1) << square) - 1
 end
 ```
 

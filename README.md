@@ -104,6 +104,8 @@ end
 
 </details>
 
+[Table of Contents](#table-of-contents)
+
 ### Difference of Squares
 
 ##### Instructions
@@ -143,6 +145,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Grains
 
@@ -197,6 +201,8 @@ end
 
 </details>
 
+[Table of Contents](#table-of-contents)
+
 ### Hamming
 
 ##### Instructions
@@ -236,6 +242,8 @@ end
 
 </details>
 
+[Table of Contents](#table-of-contents)
+
 ### Hello World
 
 ##### Instructions
@@ -264,6 +272,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Leap
 
@@ -310,6 +320,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Nucleotide Count
 
@@ -364,6 +376,8 @@ end
 
 </details>
 
+[Table of Contents](#table-of-contents)
+
 ### Pangram
 
 ##### Instructions
@@ -393,6 +407,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Reverse String
 
@@ -428,6 +444,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### RNA Transcription
 
@@ -466,6 +484,8 @@ to_rna(dna) = to_rna(dna, complements)
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Robot Name
 
@@ -539,6 +559,8 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)
 
 ### Rotational Cipher
 
@@ -618,6 +640,8 @@ end
 
 </details>
 
+[Table of Contents](#table-of-contents)
+
 ### Secret Handshake
 
 ##### Instructions
@@ -667,3 +691,5 @@ end
 ```
 
 </details>
+
+[Table of Contents](#table-of-contents)

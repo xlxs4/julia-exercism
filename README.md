@@ -362,6 +362,8 @@ end
 
 ```
 
+</details>
+
 ### Pangram
 
 ##### Instructions

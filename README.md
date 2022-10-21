@@ -50,10 +50,12 @@ Exercism is a cool website where you can work through completing exercises that 
         - [Bonus](#bonus-2)
         - [Bonus A](#bonus-a)
         - [Bonus B](#bonus-b)
-    - [Secret Handshake](#secret-handshake)
+    - [Run-Length Encoding](#run-length-encoding)
         - [Instructions](#instructions-12)
-    - [Triangle](#triangle)
+    - [Secret Handshake](#secret-handshake)
         - [Instructions](#instructions-13)
+    - [Triangle](#triangle)
+        - [Instructions](#instructions-14)
         - [Note](#note)
         - [Dig Deeper](#dig-deeper)
 
@@ -639,6 +641,60 @@ for shift in 1:26
     @eval macro $(Symbol(:R, shift, :_str))(s)
         rotate($shift, s)
     end
+end
+```
+
+</details>
+
+[Table of Contents](#table-of-contents)
+
+### Run-Length Encoding
+
+##### Instructions
+
+Implement run-length encoding and decoding.
+
+Run-length encoding (RLE) is a simple form of data compression, where runs
+(consecutive data elements) are replaced by just one data value and count.
+
+For example we can represent the original 53 characters with only 13.
+
+```text
+"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"  ->  "12WB12W3B24WB"
+```
+
+RLE allows the original data to be perfectly reconstructed from
+the compressed data, which makes it a lossless data compression.
+
+```text
+"AABCCCDEEEE"  ->  "2AB3CD4E"  ->  "AABCCCDEEEE"
+```
+
+For simplicity, you can assume that the unencoded string will only contain
+the letters A through Z (either lower or upper case) and whitespace. This way
+data to be encoded will never contain any numbers and numbers inside data to
+be decoded always represent the count for the following character.
+
+<details>
+<summary>Click for solution</summary>
+
+```julia
+function encode(s)
+    function collapse(s)
+        l = length(s)
+        l == 1 ? s : string(l) * s[end]
+    end
+
+    replace(s, r"(.)\1*" => collapse)
+end
+
+function decode(s)
+    function expand(s)
+        l = length(s)
+        l == 1 ? s : s[end]^parse(Int, s[1:end-1])
+    end
+
+    replace(s, r"(\d*)(\D)" => expand)
 end
 ```
 
